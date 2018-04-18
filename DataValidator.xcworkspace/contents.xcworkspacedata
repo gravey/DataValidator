@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:DataValidatorDemo/../DataValidator/DataValidator.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DataValidatorDemo/DataValidatorDemo.xcodeproj">
+   </FileRef>
+</Workspace>
