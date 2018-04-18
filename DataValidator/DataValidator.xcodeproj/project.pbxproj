@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86098C3320874E8400B74CAC /* DataValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928A3207E25F000E38584 /* DataValidator.framework */; };
+		86098C3B20874EA900B74CAC /* StringValidationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */; };
+		86098C3C20874EE000B74CAC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928E9207E2C7000E38584 /* Nimble.framework */; };
+		86098C3D20874EE000B74CAC /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928EA207E2C7000E38584 /* Quick.framework */; };
 		866928A8207E25F000E38584 /* DataValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 866928A6207E25F000E38584 /* DataValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		866928DF207E297C00E38584 /* DataValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928A3207E25F000E38584 /* DataValidator.framework */; };
-		866928EB207E2C7100E38584 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928E9207E2C7000E38584 /* Nimble.framework */; };
-		866928EC207E2C7100E38584 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928EA207E2C7000E38584 /* Quick.framework */; };
 		866928F3207F628F00E38584 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866928F2207F628F00E38584 /* ThreadHelper.swift */; };
 		869FCB2A20872A8A000A1B58 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869FCB2920872A8A000A1B58 /* Validator.swift */; };
 		869FCB2C20872AD8000A1B58 /* StringValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869FCB2B20872AD8000A1B58 /* StringValidations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		866928E0207E297C00E38584 /* PBXContainerItemProxy */ = {
+		86098C3420874E8400B74CAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8669289A207E25F000E38584 /* Project object */;
 			proxyType = 1;
@@ -27,11 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86098C2E20874E8400B74CAC /* DataValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86098C3220874E8400B74CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidationsSpec.swift; sourceTree = "<group>"; };
+		86098C3E20874FF400B74CAC /* DataValidatorTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataValidatorTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		866928A3207E25F000E38584 /* DataValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866928A6207E25F000E38584 /* DataValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataValidator.h; sourceTree = "<group>"; };
 		866928A7207E25F000E38584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		866928DA207E297C00E38584 /* DataValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		866928DE207E297C00E38584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		866928E9207E2C7000E38584 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		866928EA207E2C7000E38584 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		866928F2207F628F00E38584 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
@@ -40,6 +43,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		86098C2B20874E8400B74CAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86098C3C20874EE000B74CAC /* Nimble.framework in Frameworks */,
+				86098C3D20874EE000B74CAC /* Quick.framework in Frameworks */,
+				86098C3320874E8400B74CAC /* DataValidator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8669289F207E25F000E38584 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,24 +60,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		866928D7207E297C00E38584 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				866928EB207E2C7100E38584 /* Nimble.framework in Frameworks */,
-				866928EC207E2C7100E38584 /* Quick.framework in Frameworks */,
-				866928DF207E297C00E38584 /* DataValidator.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86098C2F20874E8400B74CAC /* DataValidatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */,
+				86098C3220874E8400B74CAC /* Info.plist */,
+				86098C3E20874FF400B74CAC /* DataValidatorTests-Bridging-Header.h */,
+			);
+			path = DataValidatorTests;
+			sourceTree = "<group>";
+		};
 		86692899207E25F000E38584 = {
 			isa = PBXGroup;
 			children = (
 				866928A5207E25F000E38584 /* DataValidator */,
-				866928DB207E297C00E38584 /* DataValidatorTests */,
+				86098C2F20874E8400B74CAC /* DataValidatorTests */,
 				866928A4207E25F000E38584 /* Products */,
 				866928E8207E2C7000E38584 /* Frameworks */,
 			);
@@ -74,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				866928A3207E25F000E38584 /* DataValidator.framework */,
-				866928DA207E297C00E38584 /* DataValidatorTests.xctest */,
+				86098C2E20874E8400B74CAC /* DataValidatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,23 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				869FCB2B20872AD8000A1B58 /* StringValidations.swift */,
-			);
-			path = Validations;
-			sourceTree = "<group>";
-		};
-		866928DB207E297C00E38584 /* DataValidatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				866928FB207FA06400E38584 /* Validator */,
-				866928E5207E298500E38584 /* Validations */,
-				866928DE207E297C00E38584 /* Info.plist */,
-			);
-			path = DataValidatorTests;
-			sourceTree = "<group>";
-		};
-		866928E5207E298500E38584 /* Validations */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Validations;
 			sourceTree = "<group>";
@@ -141,13 +137,6 @@
 			path = Validatables;
 			sourceTree = "<group>";
 		};
-		866928FB207FA06400E38584 /* Validator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Validator;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -162,6 +151,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		86098C2D20874E8400B74CAC /* DataValidatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86098C3620874E8400B74CAC /* Build configuration list for PBXNativeTarget "DataValidatorTests" */;
+			buildPhases = (
+				86098C2A20874E8400B74CAC /* Sources */,
+				86098C2B20874E8400B74CAC /* Frameworks */,
+				86098C2C20874E8400B74CAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86098C3520874E8400B74CAC /* PBXTargetDependency */,
+			);
+			name = DataValidatorTests;
+			productName = DataValidatorTests;
+			productReference = 86098C2E20874E8400B74CAC /* DataValidatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		866928A2207E25F000E38584 /* DataValidator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 866928AB207E25F000E38584 /* Build configuration list for PBXNativeTarget "DataValidator" */;
@@ -180,24 +187,6 @@
 			productReference = 866928A3207E25F000E38584 /* DataValidator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		866928D9207E297C00E38584 /* DataValidatorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 866928E2207E297C00E38584 /* Build configuration list for PBXNativeTarget "DataValidatorTests" */;
-			buildPhases = (
-				866928D6207E297C00E38584 /* Sources */,
-				866928D7207E297C00E38584 /* Frameworks */,
-				866928D8207E297C00E38584 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				866928E1207E297C00E38584 /* PBXTargetDependency */,
-			);
-			name = DataValidatorTests;
-			productName = DataValidatorTests;
-			productReference = 866928DA207E297C00E38584 /* DataValidatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,12 +197,13 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Luminous Squares Ltd";
 				TargetAttributes = {
-					866928A2207E25F000E38584 = {
+					86098C2D20874E8400B74CAC = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
 					};
-					866928D9207E297C00E38584 = {
+					866928A2207E25F000E38584 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -230,20 +220,20 @@
 			projectRoot = "";
 			targets = (
 				866928A2207E25F000E38584 /* DataValidator */,
-				866928D9207E297C00E38584 /* DataValidatorTests */,
+				86098C2D20874E8400B74CAC /* DataValidatorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		866928A1207E25F000E38584 /* Resources */ = {
+		86098C2C20874E8400B74CAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		866928D8207E297C00E38584 /* Resources */ = {
+		866928A1207E25F000E38584 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +243,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		86098C2A20874E8400B74CAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86098C3B20874EA900B74CAC /* StringValidationsSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8669289E207E25F000E38584 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,24 +261,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		866928D6207E297C00E38584 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		866928E1207E297C00E38584 /* PBXTargetDependency */ = {
+		86098C3520874E8400B74CAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 866928A2207E25F000E38584 /* DataValidator */;
-			targetProxy = 866928E0207E297C00E38584 /* PBXContainerItemProxy */;
+			targetProxy = 86098C3420874E8400B74CAC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		86098C3720874E8400B74CAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N734V2YJAJ;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
+				INFOPLIST_FILE = DataValidatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(SRCROOT)/../Carthage/Build/iOS/",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "N-A.DataValidatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataValidatorTests/DataValidatorTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86098C3820874E8400B74CAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N734V2YJAJ;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
+				INFOPLIST_FILE = DataValidatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(SRCROOT)/../Carthage/Build/iOS/",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "N-A.DataValidatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataValidatorTests/DataValidatorTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		866928A9207E25F000E38584 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -454,49 +490,18 @@
 			};
 			name = Release;
 		};
-		866928E3207E297C00E38584 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N734V2YJAJ;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
-				INFOPLIST_FILE = DataValidatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"$(SRCROOT)/../Carthage/Build/iOS/",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "N-A.DataValidatorTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		866928E4207E297C00E38584 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N734V2YJAJ;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
-				INFOPLIST_FILE = DataValidatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-					"$(SRCROOT)/../Carthage/Build/iOS/",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "N-A.DataValidatorTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		86098C3620874E8400B74CAC /* Build configuration list for PBXNativeTarget "DataValidatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86098C3720874E8400B74CAC /* Debug */,
+				86098C3820874E8400B74CAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8669289D207E25F000E38584 /* Build configuration list for PBXProject "DataValidator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -511,15 +516,6 @@
 			buildConfigurations = (
 				866928AC207E25F000E38584 /* Debug */,
 				866928AD207E25F000E38584 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		866928E2207E297C00E38584 /* Build configuration list for PBXNativeTarget "DataValidatorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				866928E3207E297C00E38584 /* Debug */,
-				866928E4207E297C00E38584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

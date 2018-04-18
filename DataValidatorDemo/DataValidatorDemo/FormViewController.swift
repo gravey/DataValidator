@@ -70,7 +70,7 @@ class FormViewController: UIViewController {
         return "You have not entered enough characters"
       case StringValidationError.tooManyCharacters:
         return "You have entered too many characters"
-      case StringValidationError.notValidEmailAddress:
+      case StringValidationError.invalidEmailAddressFormat:
         return "This is not a valid email address"
       case CustomValdiationError.invalidProductCodeFormat:
         return "Not a valid product code"
