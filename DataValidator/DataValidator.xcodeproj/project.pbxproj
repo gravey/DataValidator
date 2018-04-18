@@ -11,6 +11,7 @@
 		86098C3B20874EA900B74CAC /* StringValidationsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */; };
 		86098C3C20874EE000B74CAC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928E9207E2C7000E38584 /* Nimble.framework */; };
 		86098C3D20874EE000B74CAC /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928EA207E2C7000E38584 /* Quick.framework */; };
+		86098C402087611300B74CAC /* ValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86098C3F2087611300B74CAC /* ValidatorSpec.swift */; };
 		866928A8207E25F000E38584 /* DataValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 866928A6207E25F000E38584 /* DataValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		866928F3207F628F00E38584 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866928F2207F628F00E38584 /* ThreadHelper.swift */; };
 		869FCB2A20872A8A000A1B58 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869FCB2920872A8A000A1B58 /* Validator.swift */; };
@@ -32,6 +33,7 @@
 		86098C3220874E8400B74CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidationsSpec.swift; sourceTree = "<group>"; };
 		86098C3E20874FF400B74CAC /* DataValidatorTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataValidatorTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		86098C3F2087611300B74CAC /* ValidatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorSpec.swift; sourceTree = "<group>"; };
 		866928A3207E25F000E38584 /* DataValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866928A6207E25F000E38584 /* DataValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataValidator.h; sourceTree = "<group>"; };
 		866928A7207E25F000E38584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */,
+				86098C3F2087611300B74CAC /* ValidatorSpec.swift */,
 				86098C3220874E8400B74CAC /* Info.plist */,
 				86098C3E20874FF400B74CAC /* DataValidatorTests-Bridging-Header.h */,
 			);
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86098C3B20874EA900B74CAC /* StringValidationsSpec.swift in Sources */,
+				86098C402087611300B74CAC /* ValidatorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
