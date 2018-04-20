@@ -11,6 +11,9 @@ import DataValidator
 
 enum CustomValdiationError: ValidationError {
   case invalidProductCodeFormat
+  case imageNotProvided
+  case imageTooBig
+  case imageTooSmall
 }
 
 class FormViewController: UIViewController {
@@ -25,19 +28,20 @@ class FormViewController: UIViewController {
   @IBOutlet var firstNameErrorField: UILabel!
   @IBOutlet var surnameErrorField: UILabel!
   @IBOutlet var emailErrorField: UILabel!
-  @IBOutlet var productCodeErrorField: UILabel!
+  @IBOutlet var productCodeErrorField: UILabel! //Format: ABC123
   
   // MARK: - Actions
   
   @IBAction func submitPressed(_ sender: UIButton) {
     validateFields()
+    validateImage()
   }
   
   // MARK: - Validation
   
   private func validateFields() {
     let stringValdiator = Validator<String>()
-    
+
     let firstNameErrors = stringValdiator.validate(firstNameField.text, using: [StringValidations.min(characterCount: 2),
                                                                                 StringValidations.max(characterCount: 50)])
     firstNameErrorField.text = errorMessages(forValidationErrors: firstNameErrors).first
@@ -61,6 +65,22 @@ class FormViewController: UIViewController {
     
     let productCodeErrors = stringValdiator.validate(productCodeField.text, using: [productCodeValidation])
     productCodeErrorField.text = errorMessages(forValidationErrors: productCodeErrors).first
+  }
+  
+  private func validateImage() {
+    let testImage = UIImage(named: "TestImage")
+    
+    let imageValidator = Validator<UIImage>()
+    
+    let imageSizeValidation: (UIImage?) -> ValidationError? = { image in
+      guard let image = image else { return CustomValdiationError.imageNotProvided }
+      guard image.size.width > 0, image.size.height > 0 else { return CustomValdiationError.imageTooSmall }
+      guard image.size.width < 1000, image.size.height < 1000 else { return CustomValdiationError.imageTooBig }
+      return nil
+    }
+    
+    let errors = imageValidator.validate(testImage, using: [imageSizeValidation])
+    print(errors)
   }
 
   private func errorMessages(forValidationErrors errors: [ValidationError]) -> [String] {

@@ -98,7 +98,7 @@
 		866928A5207E25F000E38584 /* DataValidator */ = {
 			isa = PBXGroup;
 			children = (
-				866928F8207F976500E38584 /* Validatables */,
+				866928F8207F976500E38584 /* Validator */,
 				866928D3207E26DE00E38584 /* Validations */,
 				866928F1207F609600E38584 /* Helpers */,
 				866928A6207E25F000E38584 /* DataValidator.h */,
@@ -132,12 +132,12 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		866928F8207F976500E38584 /* Validatables */ = {
+		866928F8207F976500E38584 /* Validator */ = {
 			isa = PBXGroup;
 			children = (
 				869FCB2920872A8A000A1B58 /* Validator.swift */,
 			);
-			path = Validatables;
+			path = Validator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
