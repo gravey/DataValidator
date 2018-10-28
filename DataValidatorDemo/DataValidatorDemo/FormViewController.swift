@@ -33,27 +33,39 @@ class FormViewController: UIViewController {
   // MARK: - Actions
   
   @IBAction func submitPressed(_ sender: UIButton) {
-    validateFields()
+    validateTextFields()
     validateImage()
   }
   
   // MARK: - Validation
   
-  private func validateFields() {
+  private func validateTextFields() {
     let stringValdiator = Validator<String>()
-
-    let firstNameErrors = stringValdiator.validate(firstNameField.text, using: [StringValidations.min(characterCount: 2),
-                                                                                StringValidations.max(characterCount: 50)])
-    firstNameErrorField.text = errorMessages(forValidationErrors: firstNameErrors).first
     
-    let surnameErrors = stringValdiator.validate(surnameField.text, using: [StringValidations.min(characterCount: 2),
-                                                                            StringValidations.max(characterCount: 50)])
-    surnameErrorField.text = errorMessages(forValidationErrors: surnameErrors).first
+    let charCountValidations = [StringValidations.min(characterCount: 2),
+                                StringValidations.max(characterCount: 50)]
     
-    let emailErrors = stringValdiator.validate(emailField.text, using: [StringValidations.isEmail()])
-    emailErrorField.text = errorMessages(forValidationErrors: emailErrors).first
+    stringValdiator.validate(firstNameField.text, using: charCountValidations, success: { [unowned self] (value) in
+      self.firstNameErrorField.text = nil
+    }) { [unowned self] (errors) in
+      self.firstNameErrorField.text = self.errorMessages(forValidationErrors: errors).first
+    }
     
-    let productCodeValidation: (String?) -> ValidationError? = { productCode in
+    stringValdiator.validate(surnameField.text, using: charCountValidations, success: { [unowned self] (value) in
+      self.surnameErrorField.text = nil
+    }) { [unowned self] (errors) in
+      self.surnameErrorField.text = self.errorMessages(forValidationErrors: errors).first
+    }
+    
+    let emailValidations = charCountValidations + [StringValidations.isEmail()]
+    
+    stringValdiator.validate(emailField.text, using: emailValidations, success: { [unowned self] (value) in
+      self.emailErrorField.text = nil
+    }) { [unowned self] (errors) in
+      self.emailErrorField.text = self.errorMessages(forValidationErrors: errors).first
+    }
+    
+    stringValdiator.validate(productCodeField.text, using: { (productCode) -> Optional<ValidationError> in
       guard
         let productCode = productCode,
         productCode.count == 6,
@@ -61,26 +73,24 @@ class FormViewController: UIViewController {
         productCode.suffix(3).rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
         else { return CustomValdiationError.invalidProductCodeFormat }
       return nil
+    }, success: { [unowned self] (value) in
+      self.productCodeErrorField.text = nil
+    }) { [unowned self] (errors) in
+      self.productCodeErrorField.text = self.errorMessages(forValidationErrors: errors).first
     }
-    
-    let productCodeErrors = stringValdiator.validate(productCodeField.text, using: [productCodeValidation])
-    productCodeErrorField.text = errorMessages(forValidationErrors: productCodeErrors).first
   }
   
   private func validateImage() {
-    let testImage = UIImage(named: "TestImage")
-    
     let imageValidator = Validator<UIImage>()
     
-    let imageSizeValidation: (UIImage?) -> ValidationError? = { image in
+    imageValidator.validate(UIImage(named: "TestImage"), using: { (image) -> Optional<ValidationError> in
       guard let image = image else { return CustomValdiationError.imageNotProvided }
       guard image.size.width > 0, image.size.height > 0 else { return CustomValdiationError.imageTooSmall }
       guard image.size.width < 1000, image.size.height < 1000 else { return CustomValdiationError.imageTooBig }
       return nil
+    }) { (errors) in
+      print(errors)
     }
-    
-    let errors = imageValidator.validate(testImage, using: [imageSizeValidation])
-    print(errors)
   }
 
   private func errorMessages(forValidationErrors errors: [ValidationError]) -> [String] {

@@ -19,8 +19,8 @@ class ValidatorSpec: QuickSpec {
         beforeEach {
           sut = Validator<String>()
         }
-        describe("when validate is called with string validation blocks") {
-          it("executes validation block") {
+        describe("when validate is called with array of string validation blocks") {
+          it("executes the validation block") {
             var executed = false
             let _ = sut?.validate("TEST", using: [{ (str) -> (ValidationError?) in
               executed = true
@@ -29,17 +29,51 @@ class ValidatorSpec: QuickSpec {
             
             expect(executed).to(beTrue())
           }
-          it("returns the nil if validation passed") {
-            let errors = sut?.validate("TEST", using: [TestValidations.pass()])
-            expect(errors?.first).to(beNil())
+          it("returns nil if validation passed") {
+            var returnedErrors: [ValidationError] = []
+            sut?.validate("TEST", using: [TestValidations.pass()], fail: { (errors: [ValidationError]) in
+              returnedErrors = errors
+            })
+            expect(returnedErrors.first).to(beNil())
           }
           it("returns the error if validation failed") {
-            let errors = sut?.validate("TEST", using: [TestValidations.fail()])
-            expect(errors?.first as? TestValidationError).to(equal(TestValidationError.testHasFailed))
+            var returnedErrors: [ValidationError] = []
+            sut?.validate("TEST", using: [TestValidations.fail()], fail: { (errors: [ValidationError]) in
+              returnedErrors = errors
+            })
+            expect(returnedErrors.first as? TestValidationError).to(equal(TestValidationError.testHasFailed))
           }
           it("groups and returns errors if there is more than one failed validation") {
-            let errors = sut?.validate("TEST", using: [TestValidations.fail(), TestValidations.fail()])
-            expect(errors?.count).to(equal(2))
+            var returnedErrors: [ValidationError] = []
+            sut?.validate("TEST", using: [TestValidations.fail(), TestValidations.fail()], fail: { (errors: [ValidationError]) in
+              returnedErrors = errors
+            })
+            expect(returnedErrors.count).to(equal(2))
+          }
+        }
+        describe("when validate is called with single string validation block") {
+          it("executes the validation block") {
+            var executed = false
+            let _ = sut?.validate("TEST", using: { (str) -> (ValidationError?) in
+              executed = true
+              return nil
+              })
+            
+            expect(executed).to(beTrue())
+          }
+          it("returns nil if validation passed") {
+            var returnedErrors: [ValidationError] = []
+            sut?.validate("TEST", using: TestValidations.pass(), fail: { (errors: [ValidationError]) in
+              returnedErrors = errors
+            })
+            expect(returnedErrors.first).to(beNil())
+          }
+          it("returns the error if validation failed") {
+            var returnedErrors: [ValidationError] = []
+            sut?.validate("TEST", using: TestValidations.fail(), fail: { (errors: [ValidationError]) in
+              returnedErrors = errors
+            })
+            expect(returnedErrors.first as? TestValidationError).to(equal(TestValidationError.testHasFailed))
           }
         }
       }
