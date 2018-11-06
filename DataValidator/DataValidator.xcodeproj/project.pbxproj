@@ -12,10 +12,10 @@
 		86098C3C20874EE000B74CAC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928E9207E2C7000E38584 /* Nimble.framework */; };
 		86098C3D20874EE000B74CAC /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866928EA207E2C7000E38584 /* Quick.framework */; };
 		86098C402087611300B74CAC /* ValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86098C3F2087611300B74CAC /* ValidatorSpec.swift */; };
+		8649ECD82190CB210013D80C /* StringValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649ECD72190CB210013D80C /* StringValidation.swift */; };
 		866928A8207E25F000E38584 /* DataValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 866928A6207E25F000E38584 /* DataValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		866928F3207F628F00E38584 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866928F2207F628F00E38584 /* ThreadHelper.swift */; };
 		869FCB2A20872A8A000A1B58 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869FCB2920872A8A000A1B58 /* Validator.swift */; };
-		869FCB2C20872AD8000A1B58 /* StringValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869FCB2B20872AD8000A1B58 /* StringValidations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +34,7 @@
 		86098C3A20874EA900B74CAC /* StringValidationsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidationsSpec.swift; sourceTree = "<group>"; };
 		86098C3E20874FF400B74CAC /* DataValidatorTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataValidatorTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		86098C3F2087611300B74CAC /* ValidatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorSpec.swift; sourceTree = "<group>"; };
+		8649ECD72190CB210013D80C /* StringValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValidation.swift; sourceTree = "<group>"; };
 		866928A3207E25F000E38584 /* DataValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866928A6207E25F000E38584 /* DataValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataValidator.h; sourceTree = "<group>"; };
 		866928A7207E25F000E38584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		866928EA207E2C7000E38584 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		866928F2207F628F00E38584 /* ThreadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelper.swift; sourceTree = "<group>"; };
 		869FCB2920872A8A000A1B58 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		869FCB2B20872AD8000A1B58 /* StringValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 		866928D3207E26DE00E38584 /* Validations */ = {
 			isa = PBXGroup;
 			children = (
-				869FCB2B20872AD8000A1B58 /* StringValidations.swift */,
+				8649ECD72190CB210013D80C /* StringValidation.swift */,
 			);
 			path = Validations;
 			sourceTree = "<group>";
@@ -259,9 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8649ECD82190CB210013D80C /* StringValidation.swift in Sources */,
 				866928F3207F628F00E38584 /* ThreadHelper.swift in Sources */,
 				869FCB2A20872A8A000A1B58 /* Validator.swift in Sources */,
-				869FCB2C20872AD8000A1B58 /* StringValidations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

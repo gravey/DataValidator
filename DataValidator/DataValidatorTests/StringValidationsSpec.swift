@@ -19,7 +19,7 @@ class StringValidationsSpec: QuickSpec {
           var block: ((String?) -> (ValidationError?))!
           
           beforeEach {
-            block = StringValidations.max(characterCount: 5)
+            block = StringValidation.max(characterCount: 5)
           }
           
           it("returns too many characters error") {
@@ -31,7 +31,7 @@ class StringValidationsSpec: QuickSpec {
           var block: ((String?) -> (ValidationError?))!
           
           beforeEach {
-            block = StringValidations.max(characterCount: 100)
+            block = StringValidation.max(characterCount: 100)
           }
           
           it("returns nil") {
@@ -45,7 +45,7 @@ class StringValidationsSpec: QuickSpec {
           var block: ((String?) -> (ValidationError?))!
           
           beforeEach {
-            block = StringValidations.min(characterCount: 20)
+            block = StringValidation.min(characterCount: 20)
           }
           
           it("returns not enough characters error") {
@@ -57,7 +57,7 @@ class StringValidationsSpec: QuickSpec {
           var block: ((String?) -> (ValidationError?))!
           
           beforeEach {
-            block = StringValidations.min(characterCount: 5)
+            block = StringValidation.min(characterCount: 5)
           }
           
           it("returns nil") {
@@ -72,7 +72,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
             
           beforeEach {
-            emailValidationBlock = StringValidations.isEmail()
+            emailValidationBlock = StringValidation.isEmail()
             error = emailValidationBlock("not an email")
           }
           
@@ -85,7 +85,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            emailValidationBlock = StringValidations.isEmail()
+            emailValidationBlock = StringValidation.isEmail()
             error = emailValidationBlock("test@email.com")
           }
           
@@ -100,7 +100,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            phoneValidationBlock = StringValidations.isPhoneNumber()
+            phoneValidationBlock = StringValidation.isPhoneNumber()
             error = phoneValidationBlock("not a phone number")
           }
           
@@ -113,7 +113,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            phoneValidationBlock = StringValidations.isPhoneNumber()
+            phoneValidationBlock = StringValidation.isPhoneNumber()
             error = phoneValidationBlock("07654 345 576")
           }
           
@@ -126,7 +126,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            phoneValidationBlock = StringValidations.isPhoneNumber()
+            phoneValidationBlock = StringValidation.isPhoneNumber()
             error = phoneValidationBlock("+44 7654 345 576")
           }
           
@@ -141,7 +141,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            validationBlock = StringValidations.isAddress()
+            validationBlock = StringValidation.isAddress()
             error = validationBlock("com.domain://")
           }
           
@@ -154,7 +154,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            validationBlock = StringValidations.isAddress()
+            validationBlock = StringValidation.isAddress()
             error = validationBlock("http://www.domain.com")
           }
           
@@ -167,7 +167,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            validationBlock = StringValidations.isAddress()
+            validationBlock = StringValidation.isAddress()
             error = validationBlock("https://www.domain.com")
           }
           
@@ -180,7 +180,7 @@ class StringValidationsSpec: QuickSpec {
           var error: ValidationError?
           
           beforeEach {
-            validationBlock = StringValidations.isAddress()
+            validationBlock = StringValidation.isAddress()
             error = validationBlock("www.domain.com")
           }
           

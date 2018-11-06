@@ -14,9 +14,24 @@ public enum StringValidationError: ValidationError {
   case invalidEmailAddressFormat
   case invalidWebAddressFormat
   case invalidPhoneCharacters
+  
+  public var localizedDescription: String {
+    switch self {
+    case .notEnoughCharacters:
+      return "You have not entered enough characters"
+    case .tooManyCharacters:
+      return "You have entered too many characters"
+    case .invalidEmailAddressFormat:
+      return "This is not a valid email address"
+    case .invalidWebAddressFormat:
+      return "This is not a valid web address"
+    case .invalidPhoneCharacters:
+      return "This is not a valid phone number"
+    }
+  }
 }
 
-public class StringValidations {
+public class StringValidation {
   
   public static func max(characterCount count: Int) -> ((String?) -> (ValidationError?)) {
     let validation: (String?) -> ValidationError? = { str in
@@ -39,7 +54,7 @@ public class StringValidations {
 
 // MARK: - Email Validation
 
-extension StringValidations {
+extension StringValidation {
   
   public static func isEmail() -> ((String?) -> (ValidationError?)) {
     let validation: (String?) -> ValidationError? = { str in
@@ -58,7 +73,7 @@ extension StringValidations {
 
 // MARK: - Phone Number Validation
 
-extension StringValidations {
+extension StringValidation {
   
   public static func isPhoneNumber() -> ((String?) -> (ValidationError?)) {
     let validation: (String?) -> ValidationError? = { str in
@@ -74,7 +89,7 @@ extension StringValidations {
 
 // MARK: - Domain Validation
 
-extension StringValidations {
+extension StringValidation {
   
   public static func isAddress() -> ((String?) -> (ValidationError?)) {
     let validation: (String?) -> ValidationError? = { str in
